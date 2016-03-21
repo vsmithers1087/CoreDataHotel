@@ -150,14 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7B57051CA0628000CD05F9 /* Category */,
-				0B7B56EF1CA0625400CD05F9 /* Reservation.h */,
-				0B7B56F01CA0625400CD05F9 /* Reservation.m */,
-				0B7B56F31CA0625400CD05F9 /* Room.h */,
-				0B7B56F41CA0625400CD05F9 /* Room.m */,
-				0B7B56F71CA0625400CD05F9 /* Guest.h */,
-				0B7B56F81CA0625400CD05F9 /* Guest.m */,
-				0B7B56FB1CA0625400CD05F9 /* Hotel.h */,
-				0B7B56FC1CA0625400CD05F9 /* Hotel.m */,
+				0B7B57181CA0A42D00CD05F9 /* Classes */,
 				0B7B56C11CA0452300CD05F9 /* CoreDataHotel.xcdatamodeld */,
 			);
 			name = Model;
@@ -176,6 +169,21 @@
 				0B7B56FA1CA0625400CD05F9 /* Hotel+CoreDataProperties.m */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		0B7B57181CA0A42D00CD05F9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0B7B56EF1CA0625400CD05F9 /* Reservation.h */,
+				0B7B56F01CA0625400CD05F9 /* Reservation.m */,
+				0B7B56F31CA0625400CD05F9 /* Room.h */,
+				0B7B56F41CA0625400CD05F9 /* Room.m */,
+				0B7B56F71CA0625400CD05F9 /* Guest.h */,
+				0B7B56F81CA0625400CD05F9 /* Guest.m */,
+				0B7B56FB1CA0625400CD05F9 /* Hotel.h */,
+				0B7B56FC1CA0625400CD05F9 /* Hotel.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
