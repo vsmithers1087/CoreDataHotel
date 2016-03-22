@@ -18,7 +18,6 @@ int main(int argc, char * argv[]) {
 
 /*
  
- 
 Each column is a property and each row is an instance.
  Instead of having data in the same files. Split it up into different files.
  The relation between the objects is the power of relational databases
@@ -35,5 +34,24 @@ Each column is a property and each row is an instance.
  
  Everything happens on the main queue unless you specify that you want this to be on the background queue.
  
-
+ Day2:
+ 
+ Date Picker
+ PickerView
+ 
+ UIDatePicker
+ 
+ //nstring formatter nsstringFromDate
+ 
+ 
+ Advanced Fetching:
+ 
+ //can create a fetch request in the xcmodel gui.
+    -all logic for quiering in the classes. 
+ 
+ NSPredicate- how data should be feteched
+    -What is it that you want query from core data.
+    -Give it to the fetch request, and will only give you back items that were specified in the predicate.
+ 
+    specify the result type on the fetch request.
 */
