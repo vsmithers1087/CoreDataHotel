@@ -23,9 +23,6 @@
 		0B7B57041CA0625400CD05F9 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B56FC1CA0625400CD05F9 /* Hotel.m */; };
 		0B7B570E1CA06DA400CD05F9 /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B570D1CA06DA400CD05F9 /* HotelsViewController.m */; };
 		0B7B57111CA0840E00CD05F9 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B7B57101CA0840E00CD05F9 /* RoomsViewController.m */; };
-		0B7B57151CA0A2B700CD05F9 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B57121CA0A2B700CD05F9 /* room.png */; };
-		0B7B57161CA0A2B700CD05F9 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B57131CA0A2B700CD05F9 /* hotels.json */; };
-		0B7B57171CA0A2B700CD05F9 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B7B57141CA0A2B700CD05F9 /* hotel.png */; };
 		0BDBF0D81CA1A69A00C97991 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0D71CA1A69A00C97991 /* DateViewController.m */; };
 		0BDBF0DC1CA1A71300C97991 /* NSManagedObjectContext+NSMangagedObjectCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0DB1CA1A71300C97991 /* NSManagedObjectContext+NSMangagedObjectCategory.m */; };
 		0BDBF0E01CA1B0E200C97991 /* AvialibilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0DF1CA1B0E200C97991 /* AvialibilityViewController.m */; };
@@ -34,6 +31,9 @@
 		0BF1BC1A1CA2E75900EEEEF7 /* LookUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1BC191CA2E75900EEEEF7 /* LookUpViewController.m */; };
 		0BF1BC231CA2F7DA00EEEEF7 /* CoreDataHotelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1BC221CA2F7DA00EEEEF7 /* CoreDataHotelTests.m */; };
 		0BF1BC2C1CA30CC100EEEEF7 /* Map1.0_2.0.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1BC2B1CA30CC100EEEEF7 /* Map1.0_2.0.xcmappingmodel */; };
+		0BF1BC311CA32C3000EEEEF7 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1BC2E1CA32C3000EEEEF7 /* room.png */; };
+		0BF1BC321CA32C3000EEEEF7 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1BC2F1CA32C3000EEEEF7 /* hotels.json */; };
+		0BF1BC331CA32C3000EEEEF7 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1BC301CA32C3000EEEEF7 /* hotel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +77,6 @@
 		0B7B570D1CA06DA400CD05F9 /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsViewController.m; sourceTree = "<group>"; };
 		0B7B570F1CA0840E00CD05F9 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
 		0B7B57101CA0840E00CD05F9 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
-		0B7B57121CA0A2B700CD05F9 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = ../../../Data/room.png; sourceTree = "<group>"; };
-		0B7B57131CA0A2B700CD05F9 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = ../../../Data/hotels.json; sourceTree = "<group>"; };
-		0B7B57141CA0A2B700CD05F9 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = ../../../Data/hotel.png; sourceTree = "<group>"; };
 		0BDBF0D61CA1A69A00C97991 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateViewController.h; sourceTree = "<group>"; };
 		0BDBF0D71CA1A69A00C97991 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateViewController.m; sourceTree = "<group>"; };
 		0BDBF0DA1CA1A71300C97991 /* NSManagedObjectContext+NSMangagedObjectCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+NSMangagedObjectCategory.h"; sourceTree = "<group>"; };
@@ -98,6 +95,9 @@
 		0BF1BC2A1CA30A7D00EEEEF7 /* CoreDataHotel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoreDataHotel 2.xcdatamodel"; sourceTree = "<group>"; };
 		0BF1BC2B1CA30CC100EEEEF7 /* Map1.0_2.0.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Map1.0_2.0.xcmappingmodel; sourceTree = "<group>"; };
 		0BF1BC2D1CA31E7500EEEEF7 /* CoreDataHotel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CoreDataHotel.entitlements; sourceTree = "<group>"; };
+		0BF1BC2E1CA32C3000EEEEF7 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = room.png; path = Data/room.png; sourceTree = SOURCE_ROOT; };
+		0BF1BC2F1CA32C3000EEEEF7 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hotels.json; path = Data/hotels.json; sourceTree = SOURCE_ROOT; };
+		0BF1BC301CA32C3000EEEEF7 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hotel.png; path = Data/hotel.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +152,9 @@
 		0B7B56B51CA0452300CD05F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0B7B57121CA0A2B700CD05F9 /* room.png */,
-				0B7B57131CA0A2B700CD05F9 /* hotels.json */,
-				0B7B57141CA0A2B700CD05F9 /* hotel.png */,
+				0BF1BC2E1CA32C3000EEEEF7 /* room.png */,
+				0BF1BC2F1CA32C3000EEEEF7 /* hotels.json */,
+				0BF1BC301CA32C3000EEEEF7 /* hotel.png */,
 				0B7B56B61CA0452300CD05F9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -382,9 +382,9 @@
 			files = (
 				0B7B56C81CA0452300CD05F9 /* LaunchScreen.storyboard in Resources */,
 				0B7B56C51CA0452300CD05F9 /* Assets.xcassets in Resources */,
-				0B7B57161CA0A2B700CD05F9 /* hotels.json in Resources */,
-				0B7B57171CA0A2B700CD05F9 /* hotel.png in Resources */,
-				0B7B57151CA0A2B700CD05F9 /* room.png in Resources */,
+				0BF1BC321CA32C3000EEEEF7 /* hotels.json in Resources */,
+				0BF1BC331CA32C3000EEEEF7 /* hotel.png in Resources */,
+				0BF1BC311CA32C3000EEEEF7 /* room.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
