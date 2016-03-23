@@ -2,8 +2,8 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1713" minimumToolsVersion="Automatic">
     <entity name="Guest" representedClassName="Guest" syncable="YES">
         <attribute name="email" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="lastName" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <entity name="Hotel" representedClassName="Hotel" syncable="YES">

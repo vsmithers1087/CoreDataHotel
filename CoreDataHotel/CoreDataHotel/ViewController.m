@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "HotelsViewController.h"
+#import "DateViewController.h"
+#import "LookUpViewController.h"
 
 @interface ViewController ()
 
@@ -131,12 +133,20 @@
 }
 
 -(void)lookUpButtonSelected:(UIButton*)sender {
-
     
+    LookUpViewController *lookUPVC = [[LookUpViewController alloc]init];
+    [self.navigationController pushViewController:lookUPVC animated:YES];
+   
 }
 
 
 -(void)bookButtonSelected:(UIButton*)sender {
+    
+    DateViewController *dateVC = [[DateViewController alloc]init];
+    
+    [self.navigationController pushViewController:dateVC animated:YES];
+    
+
 
 }
 

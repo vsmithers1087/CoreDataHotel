@@ -117,9 +117,21 @@
     [self bootStrapApp];
 //    [self testBootStapData];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(persistentStoreDidImportChanges:) name:NSPersistentStoreDidImportUbiquitousContentChangesNotification object:nil];
+    
     return YES;
 }
 
+-(void)persistentStoreDidImportChanges:(NSNotification*)notifcation {
+    NSLog(@"New data");
+    
+    [self.managedObjectContext performBlock:^{
+        
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notifcation];
+        
+        
+    }];
+}
 
 #pragma mark - Core Data Stack
 
@@ -151,9 +163,14 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CoreDataHotel.sqlite"];
+    
     NSError *error = nil;
+    
+    NSDictionary *option = @{NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES, NSPersistentStoreUbiquitousContainerIdentifierKey: @"CoreDataHotel"};
+    
+    
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:option error:&error]) {
  
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";

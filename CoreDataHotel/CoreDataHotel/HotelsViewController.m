@@ -10,34 +10,34 @@
 #import "AppDelegate.h"
 #import "Hotel.h"
 #import "RoomsViewController.h"
+#import "HotelsViewController.h"
+#import "NSManagedObjectContext+NSMangagedObjectCategory.h"
 
-@interface HotelsViewController ()<UITableViewDataSource, UITableViewDelegate>
-
-@property (strong, nonatomic) NSArray *datasource;
+@interface HotelsViewController ()<UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
+@property(strong, nonatomic)NSFetchedResultsController *fetchController;
 @property (strong, nonatomic) UITableView *tableview;
 @end
 
 @implementation HotelsViewController
 
--(NSArray *)datasource{
-
-    if (!_datasource){
-        
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        
-        NSManagedObjectContext *context = delegate.managedObjectContext;
+-(NSFetchedResultsController*)fetchController {
+    
+    if (!_fetchController) {
+        NSManagedObjectContext *context = [NSManagedObjectContext currentContext];
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+        
+        _fetchController = [[NSFetchedResultsController alloc]initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+        
+        _fetchController.delegate = self;
         
         NSError *error;
         
-        _datasource = [context executeFetchRequest:request error:&error];
+        [_fetchController performFetch:&error];
         
-        if (error) {
-            NSLog(@"error %@", error);
-        }
     }
-    return _datasource;
+    return _fetchController;
 }
 
 -(void)loadView{
@@ -87,9 +87,72 @@
     //set contraints
 }
 
+/*
+ Assume self has a property 'tableView' -- as is the case for an instance of a UITableViewController
+ subclass -- and a method configureCell:atIndexPath: which updates the contents of a given cell
+ with information from a managed object at the given index path in the fetched results controller.
+ */
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableview beginUpdates];
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableview insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [self.tableview deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
+                          withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableview;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableview endUpdates];
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.datasource.count;
+    
+    return [[[self.fetchController sections]objectAtIndex:section]numberOfObjects];
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -100,7 +163,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    Hotel *hotel = [self.datasource objectAtIndex:indexPath.row];
+    Hotel *hotel = [self.fetchController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = hotel.name;
     
@@ -132,7 +195,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    Hotel *selectHotel = _datasource[indexPath.row];
+    Hotel *selectHotel = [self.fetchController objectAtIndexPath:indexPath];
     
     NSMutableArray *rooms = [[NSMutableArray alloc]init];
     
@@ -146,6 +209,24 @@
     
     [self.navigationController pushViewController:roomsViewController animated:YES];
     
+}
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Hotel *selectedHotel = [self.fetchController  objectAtIndexPath:indexPath];
+        NSManagedObjectContext *context = [NSManagedObjectContext currentContext];
+        
+        [context deleteObject:selectedHotel];
+        
+        
+        
+    }
 }
 
 @end
