@@ -78,4 +78,25 @@
     }
     
 }
+
++(NSArray*)fetchReservationsWithGuestName:(NSString*)name {
+    
+    NSManagedObjectContext *context = [NSManagedObjectContext currentContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
+    
+    request.predicate = [NSPredicate predicateWithFormat:@"guest.name CONTAINS %@ OR guest.lastName CONTAINS %@ OR guest.email CONTAINS %@", name, name, name];
+    
+    NSError *error;
+    
+    NSArray *results = [context executeFetchRequest:request error:&error];
+    
+    if (error) {
+        
+        NSLog(@"error %@", error.localizedDescription);
+    }
+    return results;
+}
+
+
+
 @end

@@ -31,6 +31,7 @@
 		0BDBF0E01CA1B0E200C97991 /* AvialibilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0DF1CA1B0E200C97991 /* AvialibilityViewController.m */; };
 		0BDBF0E31CA1B2BF00C97991 /* ReservationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0E21CA1B2BF00C97991 /* ReservationService.m */; };
 		0BDBF0E71CA1B91E00C97991 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDBF0E61CA1B91E00C97991 /* BookViewController.m */; };
+		0BF1BC1A1CA2E75900EEEEF7 /* LookUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF1BC191CA2E75900EEEEF7 /* LookUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		0BDBF0E21CA1B2BF00C97991 /* ReservationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationService.m; sourceTree = "<group>"; };
 		0BDBF0E51CA1B91E00C97991 /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		0BDBF0E61CA1B91E00C97991 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
+		0BF1BC181CA2E75900EEEEF7 /* LookUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookUpViewController.h; sourceTree = "<group>"; };
+		0BF1BC191CA2E75900EEEEF7 /* LookUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		0B7B56D11CA0456100CD05F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0BF1BC1B1CA2E75E00EEEEF7 /* LookUp */,
 				0BDBF0D51CA1A67F00C97991 /* Hotels */,
 				0BDBF0D91CA1A6AC00C97991 /* Reservation */,
 				0BDBF0E41CA1B2C700C97991 /* ReservationService */,
@@ -243,6 +247,15 @@
 			name = ReservationService;
 			sourceTree = "<group>";
 		};
+		0BF1BC1B1CA2E75E00EEEEF7 /* LookUp */ = {
+			isa = PBXGroup;
+			children = (
+				0BF1BC181CA2E75900EEEEF7 /* LookUpViewController.h */,
+				0BF1BC191CA2E75900EEEEF7 /* LookUpViewController.m */,
+			);
+			name = LookUp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +330,7 @@
 			files = (
 				0B7B56FF1CA0625400CD05F9 /* Room+CoreDataProperties.m in Sources */,
 				0B7B570E1CA06DA400CD05F9 /* HotelsViewController.m in Sources */,
+				0BF1BC1A1CA2E75900EEEEF7 /* LookUpViewController.m in Sources */,
 				0B7B56FE1CA0625400CD05F9 /* Reservation.m in Sources */,
 				0B7B57011CA0625400CD05F9 /* Guest+CoreDataProperties.m in Sources */,
 				0BDBF0E71CA1B91E00C97991 /* BookViewController.m in Sources */,

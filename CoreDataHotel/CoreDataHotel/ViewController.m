@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "HotelsViewController.h"
 #import "DateViewController.h"
+#import "LookUpViewController.h"
 
 @interface ViewController ()
 
@@ -132,6 +133,9 @@
 }
 
 -(void)lookUpButtonSelected:(UIButton*)sender {
+    
+    LookUpViewController *lookUPVC = [[LookUpViewController alloc]init];
+    [self.navigationController pushViewController:lookUPVC animated:YES];
    
 }
 
