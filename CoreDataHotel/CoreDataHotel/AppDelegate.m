@@ -117,9 +117,21 @@
     [self bootStrapApp];
 //    [self testBootStapData];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(persistentStoreDidImportChanges:) name:NSPersistentStoreDidImportUbiquitousContentChangesNotification object:nil];
+    
     return YES;
 }
 
+-(void)persistentStoreDidImportChanges:(NSNotification*)notifcation {
+    NSLog(@"New data");
+    
+    [self.managedObjectContext performBlock:^{
+        
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:notifcation];
+        
+        
+    }];
+}
 
 #pragma mark - Core Data Stack
 
@@ -154,7 +166,7 @@
     
     NSError *error = nil;
     
-    NSDictionary *option = @{NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES};
+    NSDictionary *option = @{NSMigratePersistentStoresAutomaticallyOption : @YES, NSInferMappingModelAutomaticallyOption: @YES, NSPersistentStoreUbiquitousContainerIdentifierKey: @"CoreDataHotel"};
     
     
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";

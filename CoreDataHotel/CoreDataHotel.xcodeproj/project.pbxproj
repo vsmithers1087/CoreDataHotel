@@ -97,6 +97,7 @@
 		0BF1BC241CA2F7DA00EEEEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF1BC2A1CA30A7D00EEEEF7 /* CoreDataHotel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CoreDataHotel 2.xcdatamodel"; sourceTree = "<group>"; };
 		0BF1BC2B1CA30CC100EEEEF7 /* Map1.0_2.0.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Map1.0_2.0.xcmappingmodel; sourceTree = "<group>"; };
+		0BF1BC2D1CA31E7500EEEEF7 /* CoreDataHotel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CoreDataHotel.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +139,7 @@
 		0B7B56B41CA0452300CD05F9 /* CoreDataHotel */ = {
 			isa = PBXGroup;
 			children = (
+				0BF1BC2D1CA31E7500EEEEF7 /* CoreDataHotel.entitlements */,
 				0B7B56CF1CA0453B00CD05F9 /* AppGlobal */,
 				0B7B56D11CA0456100CD05F9 /* Controller */,
 				0B7B56D01CA0455100CD05F9 /* View */,
@@ -341,6 +343,12 @@
 				TargetAttributes = {
 					0B7B56B11CA0452200CD05F9 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Z9GGFL7AD3;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					0BF1BC1F1CA2F7DA00EEEEF7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -534,10 +542,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreDataHotel/CoreDataHotel.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CoreDataHotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "N-A.CoreDataHotel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -545,10 +557,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoreDataHotel/CoreDataHotel.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CoreDataHotel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "N-A.CoreDataHotel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
