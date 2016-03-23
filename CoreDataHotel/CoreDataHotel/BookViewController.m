@@ -121,7 +121,7 @@
         NSManagedObjectContext *context = [NSManagedObjectContext currentContext];
         Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:context];
         
-        guest.name = self.firstNameField.text;
+        guest.firstName = self.firstNameField.text;
         guest.lastName = self.lastNameField.text;
         guest.email = self.email.text;
         

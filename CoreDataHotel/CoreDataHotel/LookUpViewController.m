@@ -96,7 +96,7 @@
     
     Reservation *reservation = self.datasource[indexPath.row];
     
-    cell.textLabel.text = reservation.guest.name;
+    cell.textLabel.text = reservation.guest.firstName;
     
     NSString *format = [NSString stringWithFormat:@"Hotel: %@, Room: %@", reservation.room.hotel.name, reservation.room.number];
     
